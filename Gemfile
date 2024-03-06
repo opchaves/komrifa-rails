@@ -26,15 +26,6 @@ gem "stimulus-rails"
 # Bundle and process CSS [https://github.com/rails/cssbundling-rails]
 gem "cssbundling-rails"
 
-# Use Redis adapter to run Action Cable in production
-# gem "redis", ">= 4.0.1"
-
-# Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
-# gem "kredis"
-
-# Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
-# gem "bcrypt", "~> 3.1.7"
-
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 
@@ -55,7 +46,7 @@ group :development do
   gem "web-console"
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
-  # gem "rack-mini-profiler"
+  gem "rack-mini-profiler"
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
@@ -66,3 +57,25 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "authentication-zero", "~> 3.0"
+# Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
+gem "bcrypt", "~> 3.1.7"
+# Use Rack::Ratelimit to rate limit requests [https://github.com/jeremy/rack-ratelimit]
+gem "rack-ratelimit", group: :production
+# Use Redis adapter to run additional authentication features
+gem "redis", "~> 4.0"
+# Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
+gem "kredis"
+# Use Pwned to check if a password has been found in any of the huge data breaches [https://github.com/philnash/pwned]
+gem "pwned"
+# Use OmniAuth to support multi-provider authentication [https://github.com/omniauth/omniauth]
+gem "omniauth"
+# Provides a mitigation against CVE-2015-9284 [https://github.com/cookpad/omniauth-rails_csrf_protection]
+gem "omniauth-rails_csrf_protection"
+# Use Github as a provider
+gem "omniauth-github", "~> 2.0", ">= 2.0.1"
+# Use rotp for generating and validating one time passwords [https://github.com/mdp/rotp]
+gem "rotp"
+# Use rqrcode for creating and rendering QR codes into various formats [https://github.com/whomwah/rqrcode]
+gem "rqrcode"
